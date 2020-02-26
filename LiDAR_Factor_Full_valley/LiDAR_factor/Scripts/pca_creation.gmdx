@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution xmlns="http://tempuri.org/XMLSchema.xsd" Version="2016">
+	<Operator Namespace="IMAGINE" Name="Process">
+		<DisplayName>Spatial Model</DisplayName>
+		<Port Name="Port Input 1">
+			<DisplayName>Port Input 1</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+			<Optional>false</Optional>
+			<Attribute Name="Orientation">
+				<Data>
+					<JsonValue>1</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionX">
+				<Data>
+					<JsonValue>372</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionY">
+				<Data>
+					<JsonValue>45</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+		</Port>
+		<Port Name="Port Input 2">
+			<DisplayName>Port Input 2</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+			<Optional>false</Optional>
+			<Attribute Name="Orientation">
+				<Data>
+					<JsonValue>1</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionX">
+				<Data>
+					<JsonValue>553</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionY">
+				<Data>
+					<JsonValue>519</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+		</Port>
+		<Connections ParentPort="Port Input 1" ChildDisplayName="Raster Input" ChildPort="Filename" Alias="true"/>
+		<Connections ParentPort="Port Input 2" ChildDisplayName="Raster Output" ChildPort="FilenameIn" Alias="true"/>
+		<Process>
+			<Namespace></Namespace>
+			<Name></Name>
+			<DisplayName>Spatial Model</DisplayName>
+			<DisplayCategory>General</DisplayCategory>
+			<Description></Description>
+			<Icon>Block.ico</Icon>
+			<ColorCategory>Submodel</ColorCategory>
+			<Keywords></Keywords>
+			<UIProviderNamespace></UIProviderNamespace>
+			<UIProviderName></UIProviderName>
+			<IsUsableInExpression>false</IsUsableInExpression>
+			<Syntax>Model (  )</Syntax>
+			<Operators>Raster Input</Operators>
+			<Operators>Raster Output</Operators>
+			<Operators>Band Selection</Operators>
+			<Operators>Principal Components</Operators>
+			<Tails>Raster Output</Tails>
+		</Process>
+	</Operator>
+	<Operator Namespace="IMAGINE" Name="RasterInput">
+		<DisplayName>Raster Input</DisplayName>
+		<Port Name="Filename">
+			<DisplayName>Filename</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="DataType">
+			<DisplayName>DataType</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="Interpolation">
+			<DisplayName>Interpolation</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="MapBoundary">
+			<DisplayName>MapBoundary</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="FileBoundary">
+			<DisplayName>FileBoundary</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="AOI">
+			<DisplayName>AOI</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="Recode">
+			<DisplayName>Recode</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="AttributesOnRasterOut">
+			<DisplayName>AttributesOnRasterOut</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="ReadMetadata">
+			<DisplayName>ReadMetadata</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="RasterOut">
+			<DisplayName>RasterOut</DisplayName>
+			<Description></Description>
+			<Input>false</Input>
+			<Output>true</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="AttributeTable">
+			<DisplayName>AttributeTable</DisplayName>
+			<Description></Description>
+			<Input>false</Input>
+			<Output>true</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="Metadata">
+			<DisplayName>Metadata</DisplayName>
+			<Description></Description>
+			<Input>false</Input>
+			<Output>true</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="NoData">
+			<DisplayName>NoData</DisplayName>
+			<Description></Description>
+			<Input>false</Input>
+			<Output>true</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Connections ParentDisplayName="Spatial Model" ParentPort="Port Input 1" ChildPort="Filename"/>
+		<Connections ParentPort="RasterOut" ChildDisplayName="Principal Components" ChildPort="RasterIn"/>
+		<Attribute Name="FlowControl">
+			<Data>
+				<JsonValue>false</JsonValue>
+				<Type Namespace="IMAGINE" Name="Bool"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="Orientation">
+			<Data>
+				<JsonValue>1</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="PositionX">
+			<Data>
+				<JsonValue>381</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="PositionY">
+			<Data>
+				<JsonValue>185</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+	</Operator>
+	<Operator Namespace="IMAGINE" Name="RasterOutput">
+		<DisplayName>Raster Output</DisplayName>
+		<Port Name="RasterIn">
+			<DisplayName>RasterIn</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="FilenameIn">
+			<DisplayName>FilenameIn</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="PixelType">
+			<DisplayName>PixelType</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="BlockWidth">
+			<DisplayName>BlockWidth</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="BlockHeight">
+			<DisplayName>BlockHeight</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="Thematicity">
+			<DisplayName>Thematicity</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="ComputePyramids">
+			<DisplayName>ComputePyramids</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="NoDataValue">
+			<DisplayName>NoDataValue</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>true</Hidden>
+		</Port>
+		<Port Name="RasterOut">
+			<DisplayName>RasterOut</DisplayName>
+			<Description></Description>
+			<Input>false</Input>
+			<Output>true</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="FilenameOut">
+			<DisplayName>FilenameOut</DisplayName>
+			<Description></Description>
+			<Input>false</Input>
+			<Output>true</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Connections ParentDisplayName="Band Selection" ParentPort="RasterOut" ChildPort="RasterIn"/>
+		<Connections ParentDisplayName="Spatial Model" ParentPort="Port Input 2" ChildPort="FilenameIn"/>
+		<Parents>Band Selection</Parents>
+		<Attribute Name="FlowControl">
+			<Data>
+				<JsonValue>false</JsonValue>
+				<Type Namespace="IMAGINE" Name="Bool"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="Orientation">
+			<Data>
+				<JsonValue>1</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="PositionX">
+			<Data>
+				<JsonValue>394</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="PositionY">
+			<Data>
+				<JsonValue>891</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+	</Operator>
+	<Operator Namespace="IMAGINE" Name="BandSelection">
+		<DisplayName>Band Selection</DisplayName>
+		<Port Name="RasterOut">
+			<DisplayName>RasterOut</DisplayName>
+			<Description></Description>
+			<Input>false</Input>
+			<Output>true</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="RasterIn">
+			<DisplayName>RasterIn</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+		</Port>
+		<Port Name="BandRange">
+			<DisplayName>BandRange</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+			<Data>
+				<JsonValue>{&quot;Items&quot;:[{&quot;End&quot;:8.0,&quot;Start&quot;:5.0}]}</JsonValue>
+				<Type Namespace="IMAGINE" Name="RangeList"/>
+			</Data>
+		</Port>
+		<Connections ParentDisplayName="Principal Components" ParentPort="RasterOut" ChildPort="RasterIn"/>
+		<Connections ParentPort="RasterOut" ChildDisplayName="Raster Output" ChildPort="RasterIn"/>
+		<Parents>Principal Components</Parents>
+		<Attribute Name="FlowControl">
+			<Data>
+				<JsonValue>false</JsonValue>
+				<Type Namespace="IMAGINE" Name="Bool"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="Orientation">
+			<Data>
+				<JsonValue>1</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="PositionX">
+			<Data>
+				<JsonValue>345</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="PositionY">
+			<Data>
+				<JsonValue>620</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+	</Operator>
+	<Operator Namespace="IMAGINE" Name="PrincipalComponents">
+		<DisplayName>Principal Components</DisplayName>
+		<Port Name="RasterIn">
+			<DisplayName>RasterIn</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+			<Attribute Name="ExcludedTypes">
+				<Data>
+					<JsonValue>{&quot;Items&quot;:[&quot;IMAGINE.Scalar&quot;,&quot;IMAGINE.Table&quot;,&quot;IMAGINE.Matrix&quot;]}</JsonValue>
+					<Type Namespace="IMAGINE" Name="StringList"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="Orientation">
+				<Data>
+					<JsonValue>0</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionX">
+				<Data>
+					<JsonValue>52</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionY">
+				<Data>
+					<JsonValue>110</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+		</Port>
+		<Port Name="RasterOut">
+			<DisplayName>RasterOut</DisplayName>
+			<Description></Description>
+			<Input>false</Input>
+			<Output>true</Output>
+			<Hidden>false</Hidden>
+			<Attribute Name="ExcludedTypes">
+				<Data>
+					<JsonValue>{&quot;Items&quot;:[&quot;IMAGINE.Scalar&quot;,&quot;IMAGINE.Table&quot;,&quot;IMAGINE.Matrix&quot;]}</JsonValue>
+					<Type Namespace="IMAGINE" Name="StringList"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="Orientation">
+				<Data>
+					<JsonValue>0</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionX">
+				<Data>
+					<JsonValue>1204</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionY">
+				<Data>
+					<JsonValue>129</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+		</Port>
+		<Port Name="Ignore">
+			<DisplayName>Ignore</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+			<Attribute Name="Orientation">
+				<Data>
+					<JsonValue>0</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionX">
+				<Data>
+					<JsonValue>340</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionY">
+				<Data>
+					<JsonValue>226</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+		</Port>
+		<Port Name="Count">
+			<DisplayName>Count</DisplayName>
+			<Description></Description>
+			<Input>true</Input>
+			<Output>false</Output>
+			<Hidden>false</Hidden>
+			<Data>
+				<JsonValue>8</JsonValue>
+				<Type Namespace="IMAGINE" Name="Unsigned"/>
+			</Data>
+			<Attribute Name="AdditionalTypes">
+				<Data>
+					<JsonValue>{&quot;Items&quot;:[&quot;IMAGINE.Unsigned&quot;]}</JsonValue>
+					<Type Namespace="IMAGINE" Name="StringList"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="ExcludedTypes">
+				<Data>
+					<JsonValue>{&quot;Items&quot;:[&quot;IMAGINE.Scalar&quot;,&quot;IMAGINE.Table&quot;,&quot;IMAGINE.Matrix&quot;,&quot;IMAGINE.Raster&quot;]}</JsonValue>
+					<Type Namespace="IMAGINE" Name="StringList"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="Orientation">
+				<Data>
+					<JsonValue>0</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionX">
+				<Data>
+					<JsonValue>196</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+			<Attribute Name="PositionY">
+				<Data>
+					<JsonValue>541</JsonValue>
+					<Type Namespace="IMAGINE" Name="Int"/>
+				</Data>
+			</Attribute>
+		</Port>
+		<Connections ParentDisplayName="Raster Input" ParentPort="RasterOut" ChildPort="RasterIn"/>
+		<Connections ParentPort="RasterOut" ChildDisplayName="Band Selection" ChildPort="RasterIn"/>
+		<Parents>Raster Input</Parents>
+		<Attribute Name="FlowControl">
+			<Data>
+				<JsonValue>false</JsonValue>
+				<Type Namespace="IMAGINE" Name="Bool"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="Orientation">
+			<Data>
+				<JsonValue>1</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="PositionX">
+			<Data>
+				<JsonValue>327</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+		<Attribute Name="PositionY">
+			<Data>
+				<JsonValue>407</JsonValue>
+				<Type Namespace="IMAGINE" Name="Int"/>
+			</Data>
+		</Attribute>
+	</Operator>
+</Solution>
